@@ -3,147 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciril Joy Kochu T - Robotics Portfolio</title>
+    <title>Ciril Joy Kochu T - Robotics Innovator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS will be embedded here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        
-body {
-    padding-top: 56px; /* Adjust based on navbar height */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        /* --- Global Styles & Creative Enhancements --- */
+        :root {
+            --primary-color: #0a6ebd; /* A slightly different blue */
+            --secondary-color: #f8f9fa; /* Light grey background */
+            --dark-color: #212529; /* Dark background */
+            --light-color: #ffffff;
+            --text-color: #495057;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+        }
 
-.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4MDI3NjQzMg&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center;
-    background-size: cover;
-    height: 70vh; /* Adjust height as needed */
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.hero-section h1 {
-    font-weight: bold;
-    font-size: 3.5rem; /* Responsive font size */
-}
+        body {
+            padding-top: 60px; /* Adjusted for navbar */
+            font-family: var(--body-font);
+            color: var(--text-color);
+            line-height: 1.7;
+            background-color: var(--light-color);
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
 
-.hero-section .lead {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-}
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
 
-.navbar {
-    transition: background-color 0.3s ease-in-out;
-}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            color: var(--dark-color);
+        }
 
-section {
-    scroll-margin-top: 56px; /* Offset for fixed navbar */
-}
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 0.8rem;
+        }
 
-h2 {
-    color: #343a40; /* Dark Gray */
-    font-weight: bold;
-    margin-bottom: 2rem; /* More space below headings */
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.5rem;
-}
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), lighten(var(--primary-color), 15%));
+            border-radius: 2px;
+        }
 
-/* Underline effect for headings */
-h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 60px;
-    height: 3px;
-    background-color: #0d6efd; /* Bootstrap primary blue */
-}
+        section {
+            padding: 80px 0;
+            overflow: hidden; /* For animations */
+            scroll-margin-top: 60px;
+        }
 
-.project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none; /* Remove default border */
-}
+        .bg-light-custom {
+             background-color: var(--secondary-color) !important;
+             /* Adding a subtle pattern */
+             background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e0e0e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
-}
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-.skill-item {
-    background-color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: default; /* Indicate it's not clickable unless you add functionality */
-}
+        .btn-primary:hover {
+            background-color: darken(var(--primary-color), 10%);
+            border-color: darken(var(--primary-color), 10%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
 
-.skill-item:hover {
-    background-color: #0d6efd;
-    color: #fff;
-}
+        /* --- Navbar --- */
+        .navbar {
+            background-color: rgba(33, 37, 41, 0.95); /* Slightly transparent dark */
+            backdrop-filter: blur(5px);
+            transition: background-color 0.3s ease;
+            padding: 0.8rem 0;
+        }
 
-#contact a {
-    text-decoration: none;
-    color: #0d6efd;
-    transition: color 0.3s ease;
-}
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
 
-#contact a:hover {
-    color: #0a58ca; /* Darker blue on hover */
-}
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            margin: 0 0.5rem;
+        }
 
-#contact i {
-    transition: transform 0.3s ease;
-}
+        .nav-link:hover, .nav-link.active {
+            color: var(--light-color);
+        }
 
-#contact .col-md-4:hover i {
-    transform: scale(1.1);
-}
+        /* --- Hero Section --- */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1614107151221-f4281b1415c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4MDI4MDAwMA&ixlib=rb-4.0.3&q=80&w=1920') no-repeat center center;
+            background-size: cover;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            position: relative; /* For potential particle effects */
+        }
+
+        .hero-section .container {
+            position: relative; /* Above potential effects */
+            z-index: 2;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
 
-footer {
-    margin-top: 3rem;
-}
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 3.8rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+        }
 
-/* Add fade-in animation */
-body {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
+        .hero-section .lead {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
+        /* --- About Section --- */
+        #about .profile-image { /* Placeholder if you add an image */
+            max-width: 250px;
+            border-radius: 50%;
+            margin: 0 auto 2rem auto;
+            display: block;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+         #about p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+         #about strong {
+            color: var(--primary-color);
+        }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    .hero-section .lead {
-        font-size: 1.2rem;
-    }
-}
+        /* --- Experience / Leadership Section --- */
+        .experience-card, .leadership-card {
+            background-color: var(--light-color);
+            border: none;
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .experience-card:hover, .leadership-card:hover {
+             transform: translateX(5px);
+             box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+        .experience-card .card-body, .leadership-card .card-body {
+            padding: 1.8rem;
+        }
+        .experience-card .card-title, .leadership-card .card-title {
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+        .experience-card .card-subtitle, .leadership-card .card-subtitle {
+             font-weight: 600;
+             margin-bottom: 1rem;
+        }
+        .experience-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+         .experience-card ul li::before {
+            content: "\\f058"; /* Font Awesome check circle */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-right: 0.8rem;
+         }
 
-/* Optional: Style for scrolled navbar */
-/*
-.bg-dark-scrolled {
-    background-color: rgba(0, 0, 0, 0.9) !important;
-}
-*/
+
+        /* --- Projects Section --- */
+        .project-card {
+            background-color: var(--light-color);
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Elastic transition */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        .project-card .card-img-top { /* Placeholder styling */
+             height: 200px;
+             background-color: #e9ecef;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             color: #adb5bd;
+             font-size: 1.5rem;
+             font-weight: 600;
+             /* background-image: linear-gradient(45deg, #f8f9fa, #e9ecef); */ /* Gradient placeholder */
+        }
+         .project-card .card-body {
+            padding: 1.8rem;
+            flex-grow: 1; /* Make body take remaining space */
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card .card-title {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+         .project-card .card-text {
+             flex-grow: 1; /* Push date to bottom */
+             margin-bottom: 1rem;
+         }
+        .project-card .card-text small {
+             font-weight: 600;
+             color: #6c757d;
+        }
+
+        /* --- Skills Section --- */
+        .skill-category {
+             margin-bottom: 2.5rem;
+        }
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: left;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+         .skill-category h4::after {
+             content: '';
+             position: absolute;
+             left: 0;
+             bottom: 0;
+             width: 50px;
+             height: 3px;
+             background-color: var(--primary-color);
+             opacity: 0.6;
+         }
+
+        .skill-item {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            border: 1px solid #eee;
+        }
+        .skill-item:hover {
+            transform: translateX(5px);
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .skill-item i {
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            width: 25px; /* Ensure alignment */
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .skill-item:hover i {
+            transform: scale(1.1);
+        }
+
+        /* --- Learning Journey / Certifications --- */
+         #learning h3 {
+             text-align: center;
+             margin-top: 4rem;
+             margin-bottom: 2rem;
+         }
+         #learning .list-group-item {
+            background-color: transparent; /* Blend with bg-light-custom */
+            border: none;
+            border-bottom: 1px solid #dee2e6;
+            padding: 1rem 0;
+            font-size: 1rem;
+         }
+         #learning .list-group-item:last-child {
+            border-bottom: none;
+         }
+         #learning .list-group-item::before {
+            content: "\\f058"; /* Checkmark */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-right: 1rem;
+         }
+
+        /* --- Education Section --- */
+        .education-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            margin-bottom: 1.5rem;
+             border-top: 5px solid var(--primary-color);
+        }
+        .education-card h5 {
+             color: var(--primary-color);
+        }
+        .education-card .text-muted {
+             font-weight: 600;
+             display: block;
+             margin-bottom: 0.5rem;
+        }
+
+
+        /* --- Contact Section --- */
+        #contact {
+            background-color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.8);
+        }
+        #contact h2 {
+            color: var(--light-color);
+        }
+        #contact h2::after {
+            background: var(--primary-color);
+        }
+         #contact .contact-item {
+             text-align: center;
+             margin-bottom: 2rem;
+             transition: transform 0.3s ease;
+         }
+         #contact .contact-item:hover {
+            transform: translateY(-5px);
+         }
+         #contact i {
+             font-size: 2.5rem;
+             margin-bottom: 1rem;
+             color: var(--primary-color);
+             transition: color 0.3s ease;
+         }
+          #contact .contact-item:hover i {
+             color: lighten(var(--primary-color), 15%);
+         }
+         #contact h5 {
+             color: var(--light-color);
+             margin-bottom: 0.5rem;
+         }
+         #contact a, #contact p {
+             color: rgba(255, 255, 255, 0.7);
+             text-decoration: none;
+             transition: color 0.3s ease;
+         }
+         #contact a:hover {
+             color: var(--light-color);
+         }
+
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1c1f23; /* Slightly darker than contact */
+            padding: 2rem 0;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        footer .social-links a {
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0 0.75rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        footer .social-links a:hover {
+             color: var(--primary-color);
+        }
+
+
+        /* --- Animations on Scroll (Example) --- */
+        /* Add classes to elements in HTML that you want to animate */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up {
+            transform: translateY(50px);
+        }
+        .fade-in-left {
+            transform: translateX(-50px);
+        }
+        .fade-in-right {
+            transform: translateX(50px);
+        }
+         .is-visible { /* Class added by JS when element is in viewport */
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 992px) {
+            h2 {
+                font-size: 2rem;
+            }
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+             .hero-section .lead {
+                font-size: 1.3rem;
+            }
+             section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 58px; } /* Adjust if navbar wraps */
+            .hero-section { min-height: 70vh; }
+             .hero-section h1 { font-size: 2.5rem; }
+             .hero-section .lead { font-size: 1.1rem; }
+             h2 { font-size: 1.8rem; margin-bottom: 2rem;}
+             h2::after { width: 60px; height: 3px;}
+        }
 
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Ciril Joy Kochu T</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -151,263 +473,79 @@ body {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Journey</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Creations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Toolkit</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Connect</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+    <header id="hero" class="hero-section d-flex align-items-center text-center">
         <div class="container">
-            <h1 class="display-4">Ciril Joy Kochu T</h1>
-            <p class="lead">Aspiring Robotics Engineer & Roboticist</p>
-            <a href="#contact" class="btn btn-primary btn-lg mt-3">Get In Touch</a>
+             <h1 class="display-3 fw-bold animate-on-scroll fade-in-up">Ciril Joy Kochu T</h1>
+            <p class="lead fs-4 mb-4 animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">Robotics Innovator | Building the Future, One Robot at a Time</p>
+            <a href="#contact" class="btn btn-primary btn-lg mt-3 animate-on-scroll fade-in-up" style="animation-delay: 0.4s;">Let's Collaborate</a>
         </div>
-    </header>
+        </header>
 
-    <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
+            <h2 class="mb-5 animate-on-scroll fade-in-up">Meet the Maker</h2>
             <div class="row">
-                <div class="col-md-8 mx-auto text-center">
-                    <p>Passionate and enthusiastic Robotics and Automation student with a strong foundation in hardware and software. [cite: 1, 7, 10] Eager to leverage my knowledge in practical robot design, automation, and the integration of computer vision systems. [cite: 1, 11] I have a keen interest in the mathematical modeling and analysis of robotic systems, [cite: 13] physics, and creating innovative industrial cobots. [cite: 12] Seeking challenging opportunities to learn, contribute fresh perspectives, and grow within a dynamic team environment. [cite: 2]</p>
-                     <p><strong>Languages:</strong> English, Tamil, Malayalam, French [cite: 29]</p>
-                </div>
+                <div class="col-lg-10 mx-auto text-center animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
+                    <p>Hello! I'm Ciril, a passionate Robotics and Automation engineer-in-training based in Coimbatore. Ever since I could remember, I've been captivated by how things work, especially machines that move and interact with the world. This curiosity led me to the fascinating field of robotics, where I explore the intersection of hardware, software, mathematics, and physics.</p>
+                    <p>My journey is fueled by a desire to create intelligent systems – from industrial manipulators enhancing productivity to collaborative robots (cobots) designed with unique flair. I thrive on challenges, love diving deep into mathematical modeling, and believe in the power of technology to solve real-world problems. I'm constantly learning, experimenting, and seeking opportunities to contribute to innovative projects in automation and robotics.</p>
+                    <p class="mt-4"><strong>Fluent In:</strong> English, Tamil, Malayalam, and exploring French!</p>
+                 </div>
             </div>
-        </div>
-    </section>
-
-     <!-- Experience Section -->
-    <section id="experience" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Professional Experience</h2>
-            <div class="row">
-                <div class="col-md-10 mx-auto">
-                    <div class="card mb-3 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Robotics Internship</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">QBOT Automation | Jun 2024 - Jul 2024</h6>
-                            <ul>
-                                <li>Designed and programmed an Automated Guided Vehicle (AGV) with integrated sensors for navigation and functionality. [cite: 14]</li>
-                                <li>Developed an intuitive and user-friendly graphical interface to control and monitor the AGV. [cite: 15]</li>
-                                <li>Built a chatbot from scratch to provide seamless assistance and improve interaction with the AGV system. [cite: 16]</li>
-                            </ul>
-                        </div>
-                    </div>
-                     <div class="card mb-3 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Co-Technical Head</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Creative Automation and Innovative Robotics Association, Karunya | 2024 - Present [cite: 29]</h6>
-                             <p>Contributing to technical leadership within the university robotics association.</p>
-                        </div>
-                    </div>
-                     <div class="card mb-3 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Hands-on Experience</h5>
-                             <p>20+ Hours of Hands-on Experience with Yaskawa Motoman GP8 and Yaskawa HT10DTP industrial manipulators. [cite: 29]</p>
-                        </div>
-                    </div>
-                    <div class="card mb-3 shadow-sm">
-                       <div class="card-body">
-                           <h5 class="card-title">Best Trainer Award</h5>
-                           <h6 class="card-subtitle mb-2 text-muted">National Service Scheme (NSS) | 2024 [cite: 29]</h6>
-                           <p>Awarded as the Best Trainer In AR and VR by NSS. [cite: 6, 29]</p>
-                       </div>
-                   </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Projects</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <!-- Project Card 1 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <!-- Optional: Add project image here -->
-                        <!-- <img src="path/to/image.jpg" class="card-img-top" alt="Project Image"> -->
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Industrial Robotic Arm (BCN3D Replica)</h5>
-                            <p class="card-text flex-grow-1">Led a team of 24 to construct a 3-DOF BCN3D Moveo replica using 3D printing and Marlin framework for lab use. [cite: 24] Gained experience with stepper/servo motors and drive mechanisms. [cite: 3, 25] Currently researching cobot transformation. [cite: 26]</p>
-                            <p class="card-text"><small class="text-muted">Jan 2024 - Jun 2024</small></p>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Project Card 2 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Kinematic Model of Yaskawa Robot</h5>
-                            <p class="card-text flex-grow-1">In-depth study and verification of the Yaskawa HC10DPT collaborative robot's mathematical model, including forward/inverse kinematics, DH parameters, and homogeneous transformation matrix formulation. [cite: 17]</p>
-                             <p class="card-text"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Project Card 3 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Underwater Robot Development</h5>
-                            <p class="card-text flex-grow-1">Designed and built an in-house underwater robot using physics principles for movement/stability. [cite: 18] Implemented Ethernet communication [cite: 18] and a custom UI. [cite: 19]</p>
-                            <p class="card-text"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Project Card 4 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Object-Following Robot</h5>
-                            <p class="card-text flex-grow-1">Developed and integrated a machine learning model for target object detection and tracking using computer vision techniques for autonomous following. [cite: 20, 21]</p>
-                             <p class="card-text"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Project Card 5 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Fourier Transforms in Image Segmentation</h5>
-                            <p class="card-text flex-grow-1">Implemented frequency domain filtering (edge detection) for image segmentation and integrated with a camera on a custom 3-DOF robotic platform. [cite: 6, 22, 23] Explored mathematical concepts of Fourier Transforms. [cite: 6]</p>
-                             <p class="card-text"><small class="text-muted">Sept 2023 - Dec 2023</small></p>
-                         </div>
-                    </div>
-                </div>
-                 <!-- Project Card 6 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Quadruped Surveillance Robot</h5>
-                            <p class="card-text flex-grow-1">Built a 4-legged spider robot with an ESP32 camera module for surveillance, focusing on servo motor control and Wi-Fi video streaming. [cite: 5, 9]</p>
-                             <p class="card-text"><small class="text-muted">Jul 2023 - Dec 2023</small></p>
-                         </div>
-                    </div>
-                </div>
-                 <!-- Add other projects similarly -->
-                 <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Remote Controlled Robotic Arm</h5>
-                            <p class="card-text flex-grow-1">A 4 DOF robotic arm with servo motors for pick and place, controlled via a web page. [cite: 9]</p>
-                         </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Video Surveillance Robot (Wheeled)</h5>
-                            <p class="card-text flex-grow-1">A surveillance robot using DC motors and ESP32 CAM for control and real-time video feed. [cite: 9]</p>
-                         </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card h-100 shadow-sm project-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Paper Presentation</h5>
-                            <p class="card-text flex-grow-1">Presented a paper on the advantages of autonomous robots and Industry 4.0. [cite: 9]</p>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Skills</h2>
-            <div class="row text-center">
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-robot me-2"></i>Robot Programming</div>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fab fa-python me-2"></i>Python</div>
-                </div>
-                 <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fab fa-cuttlefish me-2"></i>C++</div>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-square-root-alt me-2"></i>MATLAB</div>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-brain me-2"></i>ROS Basics</div>
-                </div>
-                 <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-cogs me-2"></i>Mechanical Design</div>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-drafting-compass me-2"></i>AutoCAD & SolidWorks</div>
-                </div>
-                 <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-industry me-2"></i>CNC Programming</div>
-                </div>
-                 <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-lightbulb me-2"></i>Problem Solving</div>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-eye me-2"></i>Computer Vision</div>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-calculator me-2"></i>Mathematical Modelling</div>
-                </div>
-                 <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-project-diagram me-2"></i>Kinematics of Robotic Arm</div>
-                </div>
-                 <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-water me-2"></i>Pneumatic & Hydraulics</div>
-                </div>
-                 <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="p-3 border rounded skill-item"><i class="fas fa-microchip me-2"></i>Machine Learning Models</div>
-                </div>
-                 <!-- Add other skills similarly -->
-            </div>
-             <h3 class="text-center mt-5 mb-4">Certifications</h3>
-             <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-light">Python and C++ Certification, Kaggle, 2023 [cite: 29]</li>
-                        <li class="list-group-item bg-light">MATLAB Onramp, MATLAB, 2023 [cite: 29]</li>
-                        <li class="list-group-item bg-light">Artificial Intelligence Fundamentals, IBM, 2024 [cite: 29]</li>
-                        <li class="list-group-item bg-light">Code Foundation for ROS and Ubuntu, The Construct, 2024 [cite: 29]</li>
-                        <li class="list-group-item bg-light">Flipkart Grid Level 1 Certificate, Flipkart, 2024 [cite: 29]</li>
-                        <li class="list-group-item bg-light">Design, Technology and Innovation, NPTEL, 2024 [cite: 29]</li>
-                        <li class="list-group-item bg-light">Introduction to Industry 4.0 and Industrial Internet of Things, NPTEL, 2023 [cite: 29]</li>
-                    </ul>
+             <div class="row mt-5 justify-content-center animate-on-scroll fade-in-up" style="animation-delay: 0.4s;">
+                <div class="col-md-8 text-center">
+                     <h4 class="mb-3" style="color: var(--primary-color);">My Philosophy</h4>
+                     <p class="fst-italic">"To approach every challenge with a blend of analytical rigor and creative thinking, continuously learning and adapting to build robotic solutions that are not just functional, but elegant and intuitive."</p>
                 </div>
              </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-5">
+     <section id="experience" class="py-5 bg-light-custom">
         <div class="container">
-            <h2 class="text-center mb-4">Education</h2>
+            <h2 class="mb-5 animate-on-scroll fade-in-up">My Journey So Far</h2>
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card shadow-sm">
-                         <div class="card-body">
-                             <h5 class="card-title">Bachelor of Technology - Robotics and Automation</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Karunya Institute of Technology and Sciences, Coimbatore [cite: 4, 7]</h6>
-                             <p class="card-text">Expected Graduation: Jun 2026 [cite: 29]</p>
-                             <p class="card-text">Current CGPA: 9.11 (as of earlier record [cite: 7])</p>
-                             <p class="card-text">Relevant Coursework/Focus: Robotics, Automation, Mathematical Modelling, Computer Vision, Kinematics, Machine Learning. [cite: 11, 13, 28]</p>
-                         </div>
+                <div class="col-lg-10 mx-auto">
+                    <div class="experience-card mb-4 animate-on-scroll fade-in-left">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-cogs me-2"></i>Robotics Internship Experience</h5>
+                            <h6 class="card-subtitle text-muted">QBOT Automation | Summer 2024</h6>
+                            <p>Dived headfirst into practical automation challenges, focusing on AGV development:</p>
+                            <ul>
+                                <li>Engineered and programmed an Automated Guided Vehicle (AGV), integrating sensors for robust navigation and task execution.</li>
+                                <li>Crafted an intuitive Graphical User Interface (GUI) to enhance AGV control and real-time monitoring.</li>
+                                <li>Developed a custom chatbot from the ground up, streamlining user support and interaction with the AGV system.</li>
+                            </ul>
+                        </div>
                     </div>
-                     <div class="card shadow-sm mt-3">
-                         <div class="card-body">
-                             <h5 class="card-title">Higher Secondary Education</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Lisieux Matriculation Higher Secondary School, Coimbatore [cite: 4]</h6>
-                             <p class="card-text">Studied French as 2nd language. [cite: 30]</p>
+
+                    <div class="leadership-card mb-4 animate-on-scroll fade-in-right" style="animation-delay: 0.1s;">
+                        <div class="card-body">
+                             <h5 class="card-title"><i class="fas fa-users me-2"></i>Leadership & Recognition</h5>
+                             <h6 class="card-subtitle text-muted">University & Community Involvement | 2024 - Present</h6>
+                             <ul>
+                                 <li>Serving as Co-Technical Head for the Creative Automation and Innovative Robotics Association at Karunya, driving technical initiatives.</li>
+                                 <li>Recognized as 'Best Trainer' in AR/VR by the National Service Scheme (NSS), sharing knowledge and fostering tech skills.</li>
+                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="leadership-card animate-on-scroll fade-in-left" style="animation-delay: 0.2s;">
+                        <div class="card-body">
+                             <h5 class="card-title"><i class="fas fa-robot me-2"></i>Industrial Manipulator Proficiency</h5>
+                             <h6 class="card-subtitle text-muted">Hands-On Lab Experience</h6>
+                             <p>Gained over 20 hours of practical experience mastering the intricacies of Yaskawa Motoman GP8 and collaborative HC10DTP industrial robots, focusing on programming, operation, and precision tasks.</p>
                          </div>
                     </div>
                 </div>
@@ -415,87 +553,280 @@ body {
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
+    <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Me</h2>
-            <div class="row text-center">
-                 <div class="col-md-4 mb-3">
-                     <i class="fas fa-envelope fa-3x mb-2 text-primary"></i>
-                     <h5>Email</h5>
-                     <a href="mailto:ciriljoy@karunya.edu.in">ciriljoy@karunya.edu.in</a> [cite: 1, 7, 10] <br>
-                     <a href="mailto:ciriljoykochut@gmail.com">ciriljoykochut@gmail.com</a> [cite: 30]
+            <h2 class="mb-5 animate-on-scroll fade-in-up">Featured Creations</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col animate-on-scroll fade-in-up">
+                    <div class="card h-100 project-card">
+                        <div class="card-img-top"><i class="fas fa-robot fa-3x"></i></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Project Moveo: Open-Source Arm Replication</h5>
+                            <p class="card-text">Led a 24-member team in building a functional replica of the BCN3D Moveo arm. Explored 3D printing, Marlin firmware, stepper/servo control, and drive mechanisms. Currently researching its evolution into a collaborative robot.</p>
+                            <p class="card-text mt-auto"><small class="text-muted">Jan 2024 - Jun 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col animate-on-scroll fade-in-up" style="animation-delay: 0.1s;">
+                     <div class="card h-100 project-card">
+                        <div class="card-img-top"><i class="fas fa-calculator fa-3x"></i></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Yaskawa HC10DTP: Kinematic Deep Dive</h5>
+                            <p class="card-text">Undertook a rigorous study of the Yaskawa cobot's mathematical underpinnings. Derived and verified forward/inverse kinematics using Denavit-Hartenberg parameters and homogeneous transformation matrices.</p>
+                            <p class="card-text mt-auto"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
+                     <div class="card h-100 project-card">
+                        <div class="card-img-top"><i class="fas fa-water fa-3x"></i></div>
+                         <div class="card-body">
+                            <h5 class="card-title">Project Nautilus: Underwater Explorer</h5>
+                            <p class="card-text">Conceptualized and constructed an underwater robot from scratch. Applied physics principles for buoyancy and stability, implemented robust Ethernet communication, and developed a custom UI for seamless control.</p>
+                             <p class="card-text mt-auto"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col animate-on-scroll fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="card h-100 project-card">
+                         <div class="card-img-top"><i class="fas fa-eye fa-3x"></i></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Project Sentinel: AI Object Tracker</h5>
+                            <p class="card-text">Developed a machine learning model for real-time object detection. Trained and integrated this AI onto a robotic platform, enabling autonomous object tracking and following using computer vision.</p>
+                             <p class="card-text mt-auto"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col animate-on-scroll fade-in-up" style="animation-delay: 0.4s;">
+                     <div class="card h-100 project-card">
+                         <div class="card-img-top"><i class="fas fa-chart-bar fa-3x"></i></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Fourier Vision: Image Segmentation</h5>
+                            <p class="card-text">Explored image analysis by implementing Fourier transforms for segmentation. Applied frequency domain filtering (like edge detection) and integrated the system with a camera on a custom 3-DOF robot.</p>
+                             <p class="card-text mt-auto"><small class="text-muted">Sept 2023 - Dec 2023</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col animate-on-scroll fade-in-up" style="animation-delay: 0.5s;">
+                     <div class="card h-100 project-card">
+                         <div class="card-img-top"><i class="fas fa-spider fa-3x"></i></div>
+                         <div class="card-body">
+                            <h5 class="card-title">ArachnoBot: Quadruped Surveillance</h5>
+                            <p class="card-text">Constructed a four-legged "spider" robot equipped with an ESP32 camera. Focused on mastering servo motor gaits and leveraging Wi-Fi for real-time video streaming in challenging terrains.</p>
+                            <p class="card-text mt-auto"><small class="text-muted">Jul 2023 - Dec 2023</small></p>
+                        </div>
+                    </div>
+                </div>
                  </div>
-                 <div class="col-md-4 mb-3">
-                    <i class="fas fa-phone fa-3x mb-2 text-primary"></i>
-                    <h5>Phone</h5>
-                    <a href="tel:+919488603851">+91 94886 03851</a> [cite: 1, 7, 11]
-                 </div>
-                 <div class="col-md-4 mb-3">
-                     <i class="fas fa-map-marker-alt fa-3x mb-2 text-primary"></i>
-                     <h5>Location</h5>
-                     <p>Coimbatore, Tamil Nadu, India [cite: 1, 10]</p>
-                     <p>No 15, Nagammal Street, K. K. Pudur, Coimbatore - 641038 [cite: 30]</p>
-                 </div>
-            </div>
-            <!-- Optional: Add a contact form here -->
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-4 bg-dark text-white text-center">
+    <section id="skills" class="py-5 bg-light-custom">
         <div class="container">
-            <p>&copy; 2025 Ciril Joy Kochu T. All Rights Reserved.</p>
-            <!-- Optional: Add Social Media Links -->
-             <!-- <a href="#" class="text-white me-2"><i class="fab fa-linkedin fa-lg"></i></a> -->
-             <!-- <a href="#" class="text-white me-2"><i class="fab fa-github fa-lg"></i></a> -->
+            <h2 class="mb-5 animate-on-scroll fade-in-up">My Technical Toolkit</h2>
+            <div class="row">
+                <div class="col-lg-6 animate-on-scroll fade-in-left">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-code me-2"></i>Programming & Software</h4>
+                        <div class="skill-item"><i class="fab fa-python"></i>Python (Proficient, Kaggle Certified)</div>
+                        <div class="skill-item"><i class="fas fa-file-code"></i>C++ (Intermediate, Kaggle Certified)</div>
+                        <div class="skill-item"><i class="fas fa-brain"></i>Robot Operating System (ROS Basics, Certified)</div>
+                        <div class="skill-item"><i class="fas fa-square-root-alt"></i>MATLAB (Simulation & Analysis, Onramp Certified)</div>
+                         <div class="skill-item"><i class="fas fa-laptop-code"></i>Robot Programming (Yaskawa, General)</div>
+                         <div class="skill-item"><i class="fas fa-cogs"></i>CNC Programming (Fundamentals)</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll fade-in-right">
+                    <div class="skill-category">
+                         <h4><i class="fas fa-drafting-compass me-2"></i>Design & Modeling</h4>
+                         <div class="skill-item"><i class="fas fa-cubes"></i>SolidWorks (Mechanical Design)</div>
+                         <div class="skill-item"><i class="fas fa-pencil-ruler"></i>AutoCAD (2D Drafting)</div>
+                         <div class="skill-item"><i class="fas fa-project-diagram"></i>Kinematic Modeling & Analysis</div>
+                         <div class="skill-item"><i class="fas fa-calculator"></i>Mathematical Modelling (System Dynamics)</div>
+                         <div class="skill-item"><i class="fas fa-vector-square"></i>Fusion 360 (Exposure)</div>
+                    </div>
+                </div>
+            </div>
+             <div class="row">
+                 <div class="col-lg-6 animate-on-scroll fade-in-left" style="animation-delay: 0.1s;">
+                    <div class="skill-category">
+                         <h4><i class="fas fa-robot me-2"></i>Robotics Concepts & Hardware</h4>
+                         <div class="skill-item"><i class="fas fa-eye"></i>Computer Vision (Fundamentals, Object Tracking)</div>
+                         <div class="skill-item"><i class="fas fa-microchip"></i>Machine Learning (Model Integration, Basics)</div>
+                         <div class="skill-item"><i class="fas fa-water"></i>Pneumatics & Hydraulics (Simulation)</div>
+                         <div class="skill-item"><i class="fas fa-industry"></i>Industrial Automation Concepts (Industry 4.0 Certified)</div>
+                         <div class="skill-item"><i class="fas fa-car-battery"></i>Motors (Stepper, Servo, DC) & Drives</div>
+                    </div>
+                </div>
+                 <div class="col-lg-6 animate-on-scroll fade-in-right" style="animation-delay: 0.1s;">
+                    <div class="skill-category">
+                         <h4><i class="fas fa-star me-2"></i>Core Competencies</h4>
+                         <div class="skill-item"><i class="fas fa-lightbulb"></i>Problem Solving & Analytical Thinking</div>
+                         <div class="skill-item"><i class="fas fa-users"></i>Team Leadership & Collaboration</div>
+                         <div class="skill-item"><i class="fas fa-comments"></i>Communication (Technical & General)</div>
+                         <div class="skill-item"><i class="fas fa-book-open"></i>Eagerness to Learn & Adaptability</div>
+                         <div class="skill-item"><i class="fas fa-language"></i>Multilingual (English, Tamil, Malayalam, French Basics)</div>
+                     </div>
+                 </div>
+             </div>
+
+             <div id="learning" class="animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
+                 <h3 class="text-center mt-5 mb-4">My Learning Journey</h3>
+                 <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-7">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Artificial Intelligence Fundamentals (IBM, 2024)</li>
+                            <li class="list-group-item">Code Foundation for ROS and Ubuntu (The Construct, 2024)</li>
+                            <li class="list-group-item">Design, Technology and Innovation (NPTEL, 2024)</li>
+                            <li class="list-group-item">Introduction to Industry 4.0 and IIoT (NPTEL, 2023)</li>
+                             <li class="list-group-item">MATLAB Onramp (MATLAB, 2023)</li>
+                            <li class="list-group-item">Python and C++ Certifications (Kaggle, 2023)</li>
+                            <li class="list-group-item">Flipkart Grid Level 1 (Flipkart, 2024)</li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2 class="mb-5 animate-on-scroll fade-in-up">Foundation & Formation</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-9 col-lg-7">
+                    <div class="education-card mb-4 animate-on-scroll fade-in-left">
+                         <h5 class="card-title">B.Tech, Robotics and Automation</h5>
+                         <span class="text-muted">Karunya Institute of Technology and Sciences, Coimbatore</span>
+                         <p class="card-text"><em>(Expected Graduation: June 2026)</em></p>
+                         <p>Currently navigating my third year, diving deep into advanced robotics concepts, control systems, and AI applications. This is where my passion for building intelligent machines truly took flight. Proudly maintaining a strong academic record (CGPA ~9.1).</p>
+                    </div>
+                     <div class="education-card animate-on-scroll fade-in-right" style="animation-delay: 0.1s;">
+                         <h5 class="card-title">Higher Secondary Education</h5>
+                         <span class="text-muted">Lisieux Matriculation Higher Secondary School, Coimbatore</span>
+                         <p>Completed my schooling with a focus on sciences and mathematics, developing a strong analytical foundation and exploring French as a second language.</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-5 animate-on-scroll fade-in-up">Let's Connect!</h2>
+            <p class="lead mb-5 animate-on-scroll fade-in-up" style="animation-delay: 0.1s;">Interested in collaborating, discussing robotics, or have an exciting opportunity? Reach out!</p>
+            <div class="row">
+                 <div class="col-md-4 contact-item animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
+                     <i class="fas fa-envelope"></i>
+                     <h5>Email</h5>
+                     <a href="mailto:ciriljoy@karunya.edu.in">ciriljoy@karunya.edu.in</a> <br>
+                     <a href="mailto:ciriljoykochut@gmail.com">ciriljoykochut@gmail.com</a>
+                 </div>
+                 <div class="col-md-4 contact-item animate-on-scroll fade-in-up" style="animation-delay: 0.3s;">
+                    <i class="fas fa-phone"></i>
+                    <h5>Phone</h5>
+                    <a href="tel:+919488603851">+91 94886 03851</a>
+                 </div>
+                 <div class="col-md-4 contact-item animate-on-scroll fade-in-up" style="animation-delay: 0.4s;">
+                     <i class="fas fa-map-marker-alt"></i>
+                     <h5>Location</h5>
+                     <p>Coimbatore, Tamil Nadu, India</p>
+                     </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p>&copy; 2025 Ciril Joy Kochu T. Crafted with <i class="fas fa-heart" style="color: red;"></i> and Code.</p>
+             <div class="social-links mt-3">
+                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                 <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                 </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Embedded JavaScript -->
+
     <script>
-        
-// Smooth scrolling for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        // --- Smooth Scrolling ---
+        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
 
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
-        if (targetElement) {
-            // Calculate offset dynamically based on navbar height
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
+                    // Update active link state
+                    document.querySelectorAll('a.nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+
+                // Close mobile navbar after click
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    navbarToggler.click();
+                }
             });
-        }
+        });
 
-        // Close mobile navbar after click
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse.classList.contains('show')) {
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            navbarToggler.click();
-        }
-    });
-});
+         // --- Active Link Highlighting on Scroll ---
+         const sections = document.querySelectorAll('section[id], header[id]');
+         const navLi = document.querySelectorAll('.navbar-nav .nav-item a.nav-link');
 
-// Optional: Change navbar background on scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        // Add a class for scrolled state - you can define this class in CSS
-        // Example: navbar.classList.add('bg-dark-scrolled');
-    } else {
-        // Remove the class when scrolled back to top
-        // Example: navbar.classList.remove('bg-dark-scrolled');
-    }
-});
+         window.addEventListener('scroll', () => {
+            let current = '';
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navbarHeight - 50; // Adjust offset as needed
+                 if (pageYOffset >= sectionTop) {
+                     current = section.getAttribute('id');
+                 }
+            });
+
+             navLi.forEach(li => {
+                 li.classList.remove('active');
+                 if (li.getAttribute('href') === `#${current}`) {
+                     li.classList.add('active');
+                 }
+             });
+              // Ensure home is active if scrolled to top
+             if (window.pageYOffset < sections[0].offsetTop - navbarHeight - 50) {
+                  navLi.forEach(li => li.classList.remove('active'));
+                  const homeLink = document.querySelector('.navbar-nav .nav-item a.nav-link[href="#hero"]');
+                  if(homeLink) homeLink.classList.add('active');
+             }
+        });
+
+
+        // --- Animation on Scroll ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+                // Optional: Remove class if you want animation to repeat when scrolling out and back in
+                // else {
+                //     entry.target.classList.remove('is-visible');
+                // }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
 
     </script>
 </body>
