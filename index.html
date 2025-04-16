@@ -46,27 +46,29 @@
             color: var(--dark-color);
         }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-            padding-bottom: 0.8rem;
-        }
+       h2 {
+    text-align: center; /* This correctly centers the text within the h2 block */
+    margin-bottom: 3rem;
+    position: relative; /* Still needed for the ::after pseudo-element */
+    /* display: inline-block; REMOVED */
+    /* left: 50%; REMOVED */
+    /* transform: translateX(-50%); REMOVED */
+    padding-bottom: 0.8rem;
+    /* Let the h2 be a block element naturally */
+}
 
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), lighten(var(--primary-color), 15%));
-            border-radius: 2px;
-        }
+/* The ::after rule remains the same and will now center correctly under the text */
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), lighten(var(--primary-color), 15%));
+    border-radius: 2px;
+}
 
         section {
             padding: 80px 0;
