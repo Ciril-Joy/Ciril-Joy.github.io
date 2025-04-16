@@ -3,182 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciril Joy Kochu T - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Ciril Joy Kochu T - Robotics Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS will be embedded here -->
+    <style>
+        
+body {
+    padding-top: 56px; /* Adjust based on navbar height */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4MDI3NjQzMg&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center;
+    background-size: cover;
+    height: 70vh; /* Adjust height as needed */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-section h1 {
+    font-weight: bold;
+    font-size: 3.5rem; /* Responsive font size */
+}
+
+.hero-section .lead {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.navbar {
+    transition: background-color 0.3s ease-in-out;
+}
+
+section {
+    scroll-margin-top: 56px; /* Offset for fixed navbar */
+}
+
+h2 {
+    color: #343a40; /* Dark Gray */
+    font-weight: bold;
+    margin-bottom: 2rem; /* More space below headings */
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Underline effect for headings */
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #0d6efd; /* Bootstrap primary blue */
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Remove default border */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.skill-item {
+    background-color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: default; /* Indicate it's not clickable unless you add functionality */
+}
+
+.skill-item:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+#contact a {
+    text-decoration: none;
+    color: #0d6efd;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #0a58ca; /* Darker blue on hover */
+}
+
+#contact i {
+    transition: transform 0.3s ease;
+}
+
+#contact .col-md-4:hover i {
+    transform: scale(1.1);
+}
+
+
+footer {
+    margin-top: 3rem;
+}
+
+/* Add fade-in animation */
+body {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1.2rem;
+    }
+}
+
+/* Optional: Style for scrolled navbar */
+/*
+.bg-dark-scrolled {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+*/
+
+    </style>
 </head>
 <body>
 
-    <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <h1>Ciril Joy Kochu T</h1>
-            <p>Aspiring Robotics Engineer</p>
+            <a class="navbar-brand" href="#">Ciril Joy Kochu T</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+        <div class="container">
+            <h1 class="display-4">Ciril Joy Kochu T</h1>
+            <p class="lead">Aspiring Robotics Engineer & Roboticist</p>
+            <a href="#contact" class="btn btn-primary btn-lg mt-3">Get In Touch</a>
         </div>
     </header>
 
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>
-            Passionate about developing industrial robots with manipulators and integrating advanced computer vision systems. [cite: 5]
-            Enthusiastic about mathematics and physics, with a strong interest in creating innovative industrial cobots featuring unique designs. [cite: 6]
-            Skilled in and deeply interested in the mathematical modeling and analysis of robotic systems. [cite: 7]
-            I consider myself an enthusiastic person who has a learning mindset. [cite: 1]
-            I am looking forward to my first Internship opportunity. [cite: 2]
-        </p>
-        <p>
-          Seeking a challenging internship opportunity in the field of Robotics and Automation to leverage my hardware and software knowledge and gain practical experience in robot design and automation. [cite: 26]
-          Eager to learn and contribute my enthusiasm and fresh perspective to a team environment [cite: 27]
-        </p>
-    </section>
-
-    <section id="education" class="container">
-        <h2>Education</h2>
-        <div>
-            <h3>Karunya Institute of Technology and Sciences</h3>
-            <p>
-                Bachelor of Technology in Robotics and Automation (2022 - Present) [cite: 2, 22] <br>
-                CGPA: 9.11 [cite: 2]
-            </p>
-            
-        </div>
-         <div>
-            <h3>Lisieux Matriculation Higher Secondary School</h3>
-            <p>
-                Schooling [cite: 29]
-            </p>
-            
-        </div>
-    </section>
-
-    <section id="experience" class="container">
-        <h2>Experience</h2>
-        <div>
-            <h3>Robotics Internship, QBOT Automation (Jun 2024 - Jul 2024) [cite: 8]</h3>
-            <ul>
-                <li>Designed and programmed an Automated Guided Vehicle (AGV) with integrated sensors for navigation and functionality. [cite: 8]</li>
-                <li>Developed an intuitive and user-friendly graphical interface to control and monitor the AGV. [cite: 9]</li>
-                 <li>Built a chatbot from scratch to provide seamless assistance and improve interaction with the AGV system. [cite: 10]</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-        <div>
-            <h3>Kinematic Model of HC10DPT Yaskawa Robot (Sept 2024 - Dec 2024) [cite: 11]</h3>
-            <p>
-                Conducted an in-depth study and verification of the mathematical model of the Yaskawa HC10DPT collaborative robot, focusing on:
-                Forward and inverse kinematics analysis, Derivation and application of Denavit-Hartenberg (DH) parameters, Formulation of the homogeneous transformation matrix. [cite: 11]
-            </p>
-        </div>
-        <div>
-            <h3>Development of an Underwater Robot (Sept 2024 - Dec 2024) [cite: 11]</h3>
-            <p>
-                Designed and built an underwater robot leveraging physics-based principles for underwater movement and stability. [cite: 11]
-                Implemented Ethernet-based communication for reliable data exchange and control. [cite: 12]
-                Developed a custom user interface (UI) for seamless operation and monitoring. [cite: 13]
-                Entirely conceptualized and constructed in-house. [cite: 13]
-            </p>
-        </div>
-         <div>
-            <h3>Object-Following Robot with Camera Integration (Sept 2024 - Dec 2024) [cite: 14]</h3>
-            <p>
-                Developed a machine learning model for target object detection and tracking. [cite: 14]
-                Trained and seamlessly integrated the model with a robotic platform. [cite: 15]
-                Utilized computer vision techniques to enable autonomous object-following functionality. [cite: 15]
-            </p>
-        </div>
-        <div>
-            <h3>Application of Fourier Transforms in Image Segmentation (Sept 2023 - Dec 2023) [cite: 16]</h3>
-            <p>
-                Implemented frequency domain filtering techniques for image segmentation, including edge detection filters.  [cite: 16]
-                Designed and integrated the solution with a camera system connected to a custom 3-DOF robotic platform. [cite: 17]
-            </p>
-        </div>
-        <div>
-            <h3>Industrial Robotic Arm: 3 Degree of Freedom (Jan 2024 - Jun 2024) [cite: 18]</h3>
-            <p>
-                Led a team of 24 members to construct a BCN3D Moveo replica for lab purposes using 3D-printed materials and programmed it with the Marlin framework. [cite: 18]
-                Gained hands-on experience with stepper and servo motors, along with various drive mechanisms. [cite: 19]
-                Currently researching methods to transform the robotic arm into a collaborative robot. [cite: 20]
-            </p>
-        </div>
-        <div>
-            <h3>INDUSTRIAL ROBOTIC ARM - MINI PROJECT (Dec 2023 - Present) [cite: 27]</h3>
-            <p>
-                Leading a team of over 24 members to replicate an Open-Source Industrial Robotic Arm made by BCN3D, with 3 Degrees of freedom. [cite: 27, 28]
-                It can be controlled by Pronterface and this project helped me and my team to learn new types of motor control drives, various stepper Motors with other mechanical properties. [cite: 28]
-            </p>
-        </div>
-        <div>
-            <h3>QUADRUPLED VIDEO SURVEILLANCE ROBOT MINI PROJECT (JULY 2023-DEC 2023) [cite: 29]</h3>
-            <p>
-                With the help of a team of 4, managed to build a 4-legged spider robot mounted with an ESP32 CAMERA module. [cite: 29, 30]
-                This project made us and my team members to work on Servo Motors and their Movement and also on how the ESP32 uses its Wi-Fi capabilities to stream the real time video feed. [cite: 30, 31]
-            </p>
-        </div>
-        <div>
-            <h3>Implementation Of Fourier Transforms on Image Segmentation Mini Paper (DEC 2022-APR 2023) [cite: 31]</h3>
-            <p>
-                Lead a team of 3 to research and implement Fourier transforms to pictures and make it easy to analysis, This project helped me and my team to understand the mathematical knowledge in Fourier Transforms and its relationship with Image and Sound Signals. [cite: 31]
-            </p>
-        </div>
-    </section>
-
-    <section id="skills" class="container">
-        <h2>Skills</h2>
-        <ul>
-            <li>Python & C++ Programming [cite: 2, 31]</li>
-            <li>MATLAB & ROS [cite: 2, 31]</li>
-            <li>Autodesk Softwares & SolidWorks [cite: 2]</li>
-            <li>Robot Programming [cite: 22]</li>
-            <li>Mechanical Design: AutoCAD and Solidworks [cite: 22]</li>
-            <li>CNC Programming [cite: 22]</li>
-            <li>Problem Solving [cite: 22]</li>
-            <li>Computer Vision [cite: 22]</li>
-            <li>Mathematical modelling [cite: 22]</li>
-            <li>Kinematics of Robotic Arm [cite: 22]</li>
-            <li>Pneumatic and Hydraulics Simulation [cite: 22]</li>
-            <li>Machine Learning Models [cite: 22]</li>
-        </ul>
-    </section>
-
-    <section id="certifications" class="container">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Python and C++ Certification, Kaggle, 2023 [cite: 22]</li>
-            <li>MATLAB Onramp, MATLAB, 2023 [cite: 22]</li>
-            <li>Artificial Intelligence Fundamentals, IBM, 2024 [cite: 22]</li>
-            <li>Code Foundation for ROS and Ubuntu, The Construct, 2024 [cite: 22]</li>
-            <li>Flipkart Grid Level 1 Certificate, Flipcart, 2024 [cite: 22]</li>
-            <li>Design, Technology and Innovation, NPTEL, 2024 [cite: 22]</li>
-             <li>Introduction to Industry 4.0 and Industrial Internet of Things, NPTEL, 2023 [cite: 22]</li>
-        </ul>
-    </section>
-
-    <section id="achievements" class="container">
-        <h2>Awards/Activities</h2>
-        <ul>
-            <li>Awarded as the Best Trainer In AR and VR by the National Service Scheme, 2024 [cite: 22, 23, 31]</li>
-            <li>CoTechnical Head for Creative Automation and Innovative Robotics Association at Karunya for the term 2024-Present [cite: 23]</li>
-            <li>20+ Hours of Hands-on Experience with Yaskawa Motoman GP8 and Yaskawa HT10DTP industrial manipulators. [cite: 23]</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p>
-            Email: <a href="mailto:ciriljoy@karunya.edu.in">ciriljoy@karunya.edu.in</a>,  <a href="mailto:ciriljoykochut@gmail.com">ciriljoykochut@gmail.com</a> [cite: 2, 22] <br>
-            Phone: +91 94886 03851 [cite: 2, 5, 22, 27] <br>
-            LinkedIn: Add your LinkedIn profile URL here
-        </p>
-    </section>
-
-    <footer>
+    <!-- About Section -->
+    <section id="about" class="py-5">
         <div class="container">
-            <p>Last Updated: 02.01.2025</p>
+            <h2 class="text-center mb-4">About Me</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <p>Passionate and enthusiastic Robotics and Automation student with a strong foundation in hardware and software. [cite: 1, 7, 10] Eager to leverage my knowledge in practical robot design, automation, and the integration of computer vision systems. [cite: 1, 11] I have a keen interest in the mathematical modeling and analysis of robotic systems, [cite: 13] physics, and creating innovative industrial cobots. [cite: 12] Seeking challenging opportunities to learn, contribute fresh perspectives, and grow within a dynamic team environment. [cite: 2]</p>
+                     <p><strong>Languages:</strong> English, Tamil, Malayalam, French [cite: 29]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Professional Experience</h2>
+            <div class="row">
+                <div class="col-md-10 mx-auto">
+                    <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Robotics Internship</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">QBOT Automation | Jun 2024 - Jul 2024</h6>
+                            <ul>
+                                <li>Designed and programmed an Automated Guided Vehicle (AGV) with integrated sensors for navigation and functionality. [cite: 14]</li>
+                                <li>Developed an intuitive and user-friendly graphical interface to control and monitor the AGV. [cite: 15]</li>
+                                <li>Built a chatbot from scratch to provide seamless assistance and improve interaction with the AGV system. [cite: 16]</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Co-Technical Head</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Creative Automation and Innovative Robotics Association, Karunya | 2024 - Present [cite: 29]</h6>
+                             <p>Contributing to technical leadership within the university robotics association.</p>
+                        </div>
+                    </div>
+                     <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Hands-on Experience</h5>
+                             <p>20+ Hours of Hands-on Experience with Yaskawa Motoman GP8 and Yaskawa HT10DTP industrial manipulators. [cite: 29]</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3 shadow-sm">
+                       <div class="card-body">
+                           <h5 class="card-title">Best Trainer Award</h5>
+                           <h6 class="card-subtitle mb-2 text-muted">National Service Scheme (NSS) | 2024 [cite: 29]</h6>
+                           <p>Awarded as the Best Trainer In AR and VR by NSS. [cite: 6, 29]</p>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project Card 1 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <!-- Optional: Add project image here -->
+                        <!-- <img src="path/to/image.jpg" class="card-img-top" alt="Project Image"> -->
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Industrial Robotic Arm (BCN3D Replica)</h5>
+                            <p class="card-text flex-grow-1">Led a team of 24 to construct a 3-DOF BCN3D Moveo replica using 3D printing and Marlin framework for lab use. [cite: 24] Gained experience with stepper/servo motors and drive mechanisms. [cite: 3, 25] Currently researching cobot transformation. [cite: 26]</p>
+                            <p class="card-text"><small class="text-muted">Jan 2024 - Jun 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Project Card 2 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Kinematic Model of Yaskawa Robot</h5>
+                            <p class="card-text flex-grow-1">In-depth study and verification of the Yaskawa HC10DPT collaborative robot's mathematical model, including forward/inverse kinematics, DH parameters, and homogeneous transformation matrix formulation. [cite: 17]</p>
+                             <p class="card-text"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Project Card 3 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Underwater Robot Development</h5>
+                            <p class="card-text flex-grow-1">Designed and built an in-house underwater robot using physics principles for movement/stability. [cite: 18] Implemented Ethernet communication [cite: 18] and a custom UI. [cite: 19]</p>
+                            <p class="card-text"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Project Card 4 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Object-Following Robot</h5>
+                            <p class="card-text flex-grow-1">Developed and integrated a machine learning model for target object detection and tracking using computer vision techniques for autonomous following. [cite: 20, 21]</p>
+                             <p class="card-text"><small class="text-muted">Sept 2024 - Dec 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Project Card 5 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Fourier Transforms in Image Segmentation</h5>
+                            <p class="card-text flex-grow-1">Implemented frequency domain filtering (edge detection) for image segmentation and integrated with a camera on a custom 3-DOF robotic platform. [cite: 6, 22, 23] Explored mathematical concepts of Fourier Transforms. [cite: 6]</p>
+                             <p class="card-text"><small class="text-muted">Sept 2023 - Dec 2023</small></p>
+                         </div>
+                    </div>
+                </div>
+                 <!-- Project Card 6 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Quadruped Surveillance Robot</h5>
+                            <p class="card-text flex-grow-1">Built a 4-legged spider robot with an ESP32 camera module for surveillance, focusing on servo motor control and Wi-Fi video streaming. [cite: 5, 9]</p>
+                             <p class="card-text"><small class="text-muted">Jul 2023 - Dec 2023</small></p>
+                         </div>
+                    </div>
+                </div>
+                 <!-- Add other projects similarly -->
+                 <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Remote Controlled Robotic Arm</h5>
+                            <p class="card-text flex-grow-1">A 4 DOF robotic arm with servo motors for pick and place, controlled via a web page. [cite: 9]</p>
+                         </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Video Surveillance Robot (Wheeled)</h5>
+                            <p class="card-text flex-grow-1">A surveillance robot using DC motors and ESP32 CAM for control and real-time video feed. [cite: 9]</p>
+                         </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100 shadow-sm project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paper Presentation</h5>
+                            <p class="card-text flex-grow-1">Presented a paper on the advantages of autonomous robots and Industry 4.0. [cite: 9]</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Skills</h2>
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-robot me-2"></i>Robot Programming</div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fab fa-python me-2"></i>Python</div>
+                </div>
+                 <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fab fa-cuttlefish me-2"></i>C++</div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-square-root-alt me-2"></i>MATLAB</div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-brain me-2"></i>ROS Basics</div>
+                </div>
+                 <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-cogs me-2"></i>Mechanical Design</div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-drafting-compass me-2"></i>AutoCAD & SolidWorks</div>
+                </div>
+                 <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-industry me-2"></i>CNC Programming</div>
+                </div>
+                 <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-lightbulb me-2"></i>Problem Solving</div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-eye me-2"></i>Computer Vision</div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-calculator me-2"></i>Mathematical Modelling</div>
+                </div>
+                 <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-project-diagram me-2"></i>Kinematics of Robotic Arm</div>
+                </div>
+                 <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-water me-2"></i>Pneumatic & Hydraulics</div>
+                </div>
+                 <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="p-3 border rounded skill-item"><i class="fas fa-microchip me-2"></i>Machine Learning Models</div>
+                </div>
+                 <!-- Add other skills similarly -->
+            </div>
+             <h3 class="text-center mt-5 mb-4">Certifications</h3>
+             <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-light">Python and C++ Certification, Kaggle, 2023 [cite: 29]</li>
+                        <li class="list-group-item bg-light">MATLAB Onramp, MATLAB, 2023 [cite: 29]</li>
+                        <li class="list-group-item bg-light">Artificial Intelligence Fundamentals, IBM, 2024 [cite: 29]</li>
+                        <li class="list-group-item bg-light">Code Foundation for ROS and Ubuntu, The Construct, 2024 [cite: 29]</li>
+                        <li class="list-group-item bg-light">Flipkart Grid Level 1 Certificate, Flipkart, 2024 [cite: 29]</li>
+                        <li class="list-group-item bg-light">Design, Technology and Innovation, NPTEL, 2024 [cite: 29]</li>
+                        <li class="list-group-item bg-light">Introduction to Industry 4.0 and Industrial Internet of Things, NPTEL, 2023 [cite: 29]</li>
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Education</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card shadow-sm">
+                         <div class="card-body">
+                             <h5 class="card-title">Bachelor of Technology - Robotics and Automation</h5>
+                             <h6 class="card-subtitle mb-2 text-muted">Karunya Institute of Technology and Sciences, Coimbatore [cite: 4, 7]</h6>
+                             <p class="card-text">Expected Graduation: Jun 2026 [cite: 29]</p>
+                             <p class="card-text">Current CGPA: 9.11 (as of earlier record [cite: 7])</p>
+                             <p class="card-text">Relevant Coursework/Focus: Robotics, Automation, Mathematical Modelling, Computer Vision, Kinematics, Machine Learning. [cite: 11, 13, 28]</p>
+                         </div>
+                    </div>
+                     <div class="card shadow-sm mt-3">
+                         <div class="card-body">
+                             <h5 class="card-title">Higher Secondary Education</h5>
+                             <h6 class="card-subtitle mb-2 text-muted">Lisieux Matriculation Higher Secondary School, Coimbatore [cite: 4]</h6>
+                             <p class="card-text">Studied French as 2nd language. [cite: 30]</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Me</h2>
+            <div class="row text-center">
+                 <div class="col-md-4 mb-3">
+                     <i class="fas fa-envelope fa-3x mb-2 text-primary"></i>
+                     <h5>Email</h5>
+                     <a href="mailto:ciriljoy@karunya.edu.in">ciriljoy@karunya.edu.in</a> [cite: 1, 7, 10] <br>
+                     <a href="mailto:ciriljoykochut@gmail.com">ciriljoykochut@gmail.com</a> [cite: 30]
+                 </div>
+                 <div class="col-md-4 mb-3">
+                    <i class="fas fa-phone fa-3x mb-2 text-primary"></i>
+                    <h5>Phone</h5>
+                    <a href="tel:+919488603851">+91 94886 03851</a> [cite: 1, 7, 11]
+                 </div>
+                 <div class="col-md-4 mb-3">
+                     <i class="fas fa-map-marker-alt fa-3x mb-2 text-primary"></i>
+                     <h5>Location</h5>
+                     <p>Coimbatore, Tamil Nadu, India [cite: 1, 10]</p>
+                     <p>No 15, Nagammal Street, K. K. Pudur, Coimbatore - 641038 [cite: 30]</p>
+                 </div>
+            </div>
+            <!-- Optional: Add a contact form here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p>&copy; 2025 Ciril Joy Kochu T. All Rights Reserved.</p>
+            <!-- Optional: Add Social Media Links -->
+             <!-- <a href="#" class="text-white me-2"><i class="fab fa-linkedin fa-lg"></i></a> -->
+             <!-- <a href="#" class="text-white me-2"><i class="fab fa-github fa-lg"></i></a> -->
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Embedded JavaScript -->
+    <script>
+        
+// Smooth scrolling for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            // Calculate offset dynamically based on navbar height
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        // Close mobile navbar after click
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            navbarToggler.click();
+        }
+    });
+});
+
+// Optional: Change navbar background on scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        // Add a class for scrolled state - you can define this class in CSS
+        // Example: navbar.classList.add('bg-dark-scrolled');
+    } else {
+        // Remove the class when scrolled back to top
+        // Example: navbar.classList.remove('bg-dark-scrolled');
+    }
+});
+
+    </script>
 </body>
 </html>
